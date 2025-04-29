@@ -14,7 +14,7 @@ app.use(
   cors({
     origin: (origin, callback) => {
       const localhostOrigin = "http://localhost";
-      const netlifyOrigin = "railong-w8-blog-front.netlify.app";
+      const netlifyOrigin = "w9-blog-front.netlify.app";
 
       if (!origin) {
         return callback(null, true);
