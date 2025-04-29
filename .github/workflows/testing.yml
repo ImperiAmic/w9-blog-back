@@ -2,6 +2,9 @@ name: Testing
 
 on: push
 
+env:
+  ALLOWED_ORIGINS: ${{ secrets.ALLOWED_ORIGINS }}
+
 jobs:
   test:
     name: Tests passes
