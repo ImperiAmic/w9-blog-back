@@ -6,6 +6,7 @@ export interface PostStructure {
   tags: string[];
   content: string;
   publishDate: Date;
+  author: string;
 }
 
 export type PostData = Omit<PostStructure, "_id">;

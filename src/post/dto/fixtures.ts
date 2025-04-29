@@ -19,6 +19,7 @@ Instructions:
 2. Cook on high pressure for 4 minutes.
 3. Quick release, then stir in butter, milk, and cheese.
 4. Mix until creamy and smooth.`,
+  author: "Negri de Cal Negri",
 };
 
 const pulledPorkDto: PostDataDto = {
@@ -39,6 +40,7 @@ Instructions:
 2. Add pork, vinegar, salt, and pepper.
 3. Cook on low for 8 hours.
 4. Shred pork, stir in BBQ sauce, and serve.`,
+  author: "Negri de Cal Negri",
 };
 
 export { macAndCheeseDto, pulledPorkDto };
