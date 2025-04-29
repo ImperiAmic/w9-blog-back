@@ -12,22 +12,22 @@ app.use(morgan("dev"));
 app.use(express.json());
 app.use(
   cors({
-    origin: (origin, callback) => {
-      const localhostOrigin = "http://localhost";
-      const netlifyOrigin = "w9-blog-front.netlify.app";
-
-      if (!origin) {
+    origin: (corsOrigin, callback) => {
+      if (!corsOrigin) {
         return callback(null, true);
       }
 
-      if (
-        origin.startsWith(localhostOrigin) ||
-        origin.endsWith(netlifyOrigin)
-      ) {
+      const allowedOrigins = process.env.ALLOWED_ORIGINS.split(",");
+
+      const isOriginAllowed = allowedOrigins.some((origin) =>
+        corsOrigin?.includes(origin),
+      );
+
+      if (isOriginAllowed) {
         return callback(null, true);
       }
 
-      return callback(new Error("Not allowed by CORS"), false);
+      return callback(new Error("Origin not allowed by CORS policy"), false);
     },
     credentials: true,
   }),
