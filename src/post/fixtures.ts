@@ -20,6 +20,7 @@ Instructions:
 2. Cook on high pressure for 4 minutes.
 3. Quick release, then stir in butter, milk, and cheese.
 4. Mix until creamy and smooth.`,
+  author: "Negri de Cal Negri",
 };
 
 const recipe2: PostStructure = {
@@ -41,6 +42,7 @@ Instructions:
 2. Add pork, vinegar, salt, and pepper.
 3. Cook on low for 8 hours.
 4. Shred pork, stir in BBQ sauce, and serve.`,
+  author: "Negri de Cal Negri",
 };
 
 const recipe3: PostStructure = {
@@ -61,6 +63,7 @@ Instructions:
 1. Combine oats, milk, yogurt, and chia seeds in a jar.
 2. Stir well and refrigerate overnight.
 3. Top with fresh berries in the morning and enjoy.`,
+  author: "Negri de Cal Negri",
 };
 
 const recipe4: PostStructure = {
@@ -83,6 +86,7 @@ Instructions:
 2. Stir to combine.
 3. Set to 'Cook' and stir occasionally.
 4. Serve hot with rice or naan.`,
+  author: "Negri de Cal Negri",
 };
 
 const recipe5: PostStructure = {
@@ -105,6 +109,7 @@ Instructions:
 2. Pan-fry in olive oil until golden and cooked through.
 3. Mix sour cream, dill, and lemon juice for sauce.
 4. Serve salmon topped with dill sauce.`,
+  author: "Negri de Cal Negri",
 };
 
 const recipe6: PostStructure = {
@@ -126,6 +131,7 @@ Instructions:
 3. Press into a lined pan.
 4. Melt and drizzle chocolate on top.
 5. Refrigerate for 1 hour before cutting.`,
+  author: "Negri de Cal Negri",
 };
 
 const recipe7: PostStructure = {
@@ -148,6 +154,7 @@ Instructions:
 3. Add red pepper flakes.
 4. Toss pasta in garlic oil.
 5. Garnish with parsley and serve.`,
+  author: "Negri de Cal Negri",
 };
 
 const recipe8: PostStructure = {
@@ -170,6 +177,7 @@ Instructions:
 2. Season to taste.
 3. Spoon into lettuce leaves and roll up.
 4. Enjoy chilled or at room temperature.`,
+  author: "Negri de Cal Negri",
 };
 
 const recipe9: PostStructure = {
@@ -191,6 +199,7 @@ Instructions:
 1. Layer ingredients in mason jar: dressing, tomatoes, cucumber, olives, feta, lettuce.
 2. Seal and refrigerate.
 3. Shake before eating.`,
+  author: "Negri de Cal Negri",
 };
 
 const recipe10: PostStructure = {
@@ -210,6 +219,7 @@ Instructions:
 1. Toss sweet potatoes with olive oil, paprika, and salt.
 2. Air fry at 400°F for 15–20 minutes, shaking halfway.
 3. Serve with your favorite dip.`,
+  author: "Negri de Cal Negri",
 };
 
 export {
