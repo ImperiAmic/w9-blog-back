@@ -1,4 +1,4 @@
-import { PostStructure } from "./types.js";
+import { PostData, PostStructure } from "./types.js";
 
 const recipe1: PostStructure = {
   _id: "68068eedaad91c08b13ed667",
@@ -233,4 +233,35 @@ export {
   recipe8,
   recipe9,
   recipe10,
+};
+
+export const callos: PostData = {
+  publishDate: new Date(),
+  author: "Ana Lourdes",
+  title: "Callos del Bar Amadeo",
+  content:
+    "Lavarlos bien y cocinar despacico; y ojo que si hay tormenta se cortan",
+  imageUrl: "http://www.iglesuela.es/callos.webp",
+  imageAlt: "Callos recién sacados haciendo chup-chup",
+  tags: ["tapas"],
+};
+
+export const pajaritos: PostData = {
+  publishDate: new Date(),
+  author: "Felipe",
+  title: "Pajaritos del Bar Amadeo",
+  content: "Friticos antes de ponerlos en conserva de aceite",
+  imageUrl: "http://www.iglesuela.es/pajaritos.webp",
+  imageAlt: "Pajaritos con patacas fritas y pimientos rojo",
+  tags: ["tapas"],
+};
+
+export const conejo: PostData = {
+  publishDate: new Date(),
+  author: "Ana Lourdes",
+  title: "Conejo en escabeche del Bar Amadeo",
+  content: "Friticos antes de ponerlos en conserva de aceite y vinagre",
+  imageUrl: "http://www.iglesuela.es/conejo.webp",
+  imageAlt: "Conejo en escabeche con patacas fritas y pimientos rojo",
+  tags: ["tapas"],
 };

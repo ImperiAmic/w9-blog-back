@@ -10,3 +10,7 @@ export interface PostStructure {
 }
 
 export type PostData = Omit<PostStructure, "_id">;
+
+export interface ResponseBody {
+  posts: PostData[];
+}
