@@ -58,7 +58,7 @@ class PostController implements PostControllerStructure {
     const newPost = await this.postModel.create(postData);
     (await newPost).save();
 
-    res.status(statusCodes.CREATED).json(newPost);
+    res.status(statusCodes.CREATED).json({ post: newPost });
   };
 }
 

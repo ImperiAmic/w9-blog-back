@@ -25,7 +25,7 @@ describe("Given the POST /posts endpoint", () => {
   describe("When it receives a request with 'Conejo en escabeche del Bar Amadeo' reciepe", () => {
     test("Then it should respose with a 201 status code and 'Conejo en escabeche del Bar Amadeo' reciepe", async () => {
       const expectedStatusCode = 201;
-      const coso = conejo.title;
+      const expectedConejoRecipe = conejo;
 
       const response = await request(app)
         .post("/posts")
@@ -34,7 +34,16 @@ describe("Given the POST /posts endpoint", () => {
         .set("Accept", "application/json");
 
       expect(response.status).toBe(expectedStatusCode);
-      expect(response.body.title).toBe(coso);
+      expect(response.body.post).toEqual(
+        expect.objectContaining({
+          title: expectedConejoRecipe.title,
+          author: expectedConejoRecipe.author,
+          content: expectedConejoRecipe.content,
+          imageAlt: expectedConejoRecipe.imageAlt,
+          imageUrl: expectedConejoRecipe.imageUrl,
+          tags: expectedConejoRecipe.tags,
+        }),
+      );
     });
 
     test("Then it should response with a 409 status code and 'Post with this title already exists' error", async () => {

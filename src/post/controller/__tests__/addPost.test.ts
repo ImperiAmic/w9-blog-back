@@ -45,7 +45,11 @@ describe("Given the addPost method of PostController", () => {
       await postController.addPost(req as PostsRequest, res as Response, next);
 
       expect(res.json).toHaveBeenCalledWith(
-        expect.objectContaining(macAndCheeseDto),
+        expect.objectContaining({
+          post: expect.objectContaining({
+            title: macAndCheeseDto.title,
+          }),
+        }),
       );
     });
   });
