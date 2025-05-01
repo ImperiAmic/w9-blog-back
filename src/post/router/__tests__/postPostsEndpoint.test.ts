@@ -22,26 +22,22 @@ afterAll(async () => {
 });
 
 describe("Given the POST /posts endpoint", () => {
-  describe("When it receives a request with 'Conejo en escabeche del Bar Amadeo' reciepe", () => {
-    test("Then it should respose with a 201 status code and 'Conejo en escabeche del Bar Amadeo' reciepe", async () => {
+  describe("When it receives a request with 'Conejo en escabeche del Bar Amadeo' post", () => {
+    test("Then it should respose with a 201 status code and 'Conejo en escabeche del Bar Amadeo' post", async () => {
       const expectedStatusCode = 201;
-      const expectedConejoRecipe = conejo;
+      const expectedConejoPost = conejo;
 
-      const response = await request(app)
-        .post("/posts")
-        .send(conejo)
-        .set("Content-Type", "application/json")
-        .set("Accept", "application/json");
+      const response = await request(app).post("/posts").send(conejo);
 
       expect(response.status).toBe(expectedStatusCode);
       expect(response.body.post).toEqual(
         expect.objectContaining({
-          title: expectedConejoRecipe.title,
-          author: expectedConejoRecipe.author,
-          content: expectedConejoRecipe.content,
-          imageAlt: expectedConejoRecipe.imageAlt,
-          imageUrl: expectedConejoRecipe.imageUrl,
-          tags: expectedConejoRecipe.tags,
+          title: expectedConejoPost.title,
+          author: expectedConejoPost.author,
+          content: expectedConejoPost.content,
+          imageAlt: expectedConejoPost.imageAlt,
+          imageUrl: expectedConejoPost.imageUrl,
+          tags: expectedConejoPost.tags,
         }),
       );
     });
@@ -52,11 +48,7 @@ describe("Given the POST /posts endpoint", () => {
       const expectedStatusCode = 409;
       const expectedErrorMessage = "Post with this title already exists";
 
-      const response = await request(app)
-        .post("/posts")
-        .send(callos)
-        .set("Content-Type", "application/json")
-        .set("Accept", "application/json");
+      const response = await request(app).post("/posts").send(callos);
 
       expect(response.status).toBe(expectedStatusCode);
       expect(response.body.error).toBe(expectedErrorMessage);

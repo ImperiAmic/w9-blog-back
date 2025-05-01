@@ -1,4 +1,4 @@
-import { PostData, PostStructure } from "./types.js";
+import { PostStructure } from "./types.js";
 
 export const recipe1: PostStructure = {
   _id: "68068eedaad91c08b13ed667",
@@ -222,7 +222,7 @@ Instructions:
   author: "Negri de Cal Negri",
 };
 
-export const callos: PostData = {
+export const callos: PostStructure = {
   publishDate: new Date(),
   author: "Ana Lourdes",
   title: "Callos del Bar Amadeo",
@@ -231,9 +231,10 @@ export const callos: PostData = {
   imageUrl: "http://www.iglesuela.es/callos.webp",
   imageAlt: "Callos recién sacados haciendo chup-chup",
   tags: ["tapas"],
+  _id: "aaaaaaaaaaaaaaaaaaaaaaaa",
 };
 
-export const pajaritos: PostData = {
+export const pajaritos: PostStructure = {
   publishDate: new Date(),
   author: "Felipe",
   title: "Pajaritos del Bar Amadeo",
@@ -241,9 +242,10 @@ export const pajaritos: PostData = {
   imageUrl: "http://www.iglesuela.es/pajaritos.webp",
   imageAlt: "Pajaritos con patacas fritas y pimientos rojo",
   tags: ["tapas"],
+  _id: "bbbbbbbbbbbbbbbbbbbbbbbb",
 };
 
-export const conejo: PostData = {
+export const conejo: PostStructure = {
   publishDate: new Date(),
   author: "Ana Lourdes",
   title: "Conejo en escabeche del Bar Amadeo",
@@ -251,4 +253,16 @@ export const conejo: PostData = {
   imageUrl: "http://www.iglesuela.es/conejo.webp",
   imageAlt: "Conejo en escabeche con patacas fritas y pimientos rojo",
   tags: ["tapas"],
+  _id: "cccccccccccccccccccccccc",
+};
+
+export const crocretas: PostStructure = {
+  publishDate: new Date(),
+  author: "Felipe",
+  title: "Crocretas de Bacalao del Bar Amadeo",
+  content: "Crujientes por fuera, cremosas por dentro",
+  imageUrl: "http://www.iglesuela.es/crocretas.webp",
+  imageAlt: "Crocretas de bacalao",
+  tags: ["tapas"],
+  _id: "ffffffffffffffffffffffff",
 };
