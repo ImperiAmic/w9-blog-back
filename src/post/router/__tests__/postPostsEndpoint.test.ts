@@ -45,16 +45,21 @@ describe("Given the POST /posts endpoint", () => {
         }),
       );
     });
+  });
 
+  describe("When it receives a request with 'Callos del Bar Amadeo' reciepe which is already included", () => {
     test("Then it should response with a 409 status code and 'Post with this title already exists' error", async () => {
+      const expectedStatusCode = 409;
+      const expectedErrorMessage = "Post with this title already exists";
+
       const response = await request(app)
         .post("/posts")
-        .send(conejo)
+        .send(callos)
         .set("Content-Type", "application/json")
         .set("Accept", "application/json");
 
-      expect(response.status).toBe(409);
-      expect(response.body.error).toBe("Post with this title already exists");
+      expect(response.status).toBe(expectedStatusCode);
+      expect(response.body.error).toBe(expectedErrorMessage);
     });
   });
 });
