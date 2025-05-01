@@ -1,6 +1,6 @@
 import { PostDataDto } from "./types.js";
 
-const macAndCheeseDto: PostDataDto = {
+export const macAndCheeseDto: PostDataDto = {
   publishDate: "2025-04-13T09:00:00.000Z",
   title: "Instant Pot Mac and Cheese",
   imageUrl: "https://example.com/images/mac-and-cheese.jpg",
@@ -22,7 +22,7 @@ Instructions:
   author: "Negri de Cal Negri",
 };
 
-const pulledPorkDto: PostDataDto = {
+export const pulledPorkDto: PostDataDto = {
   publishDate: "2025-04-14T11:30:00.000Z",
   title: "Slow Cooker BBQ Pulled Pork",
   imageUrl: "https://example.com/images/pulled-pork.jpg",
@@ -42,5 +42,3 @@ Instructions:
 4. Shred pork, stir in BBQ sauce, and serve.`,
   author: "Negri de Cal Negri",
 };
-
-export { macAndCheeseDto, pulledPorkDto };
