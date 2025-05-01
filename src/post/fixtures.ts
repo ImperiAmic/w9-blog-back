@@ -1,6 +1,6 @@
 import { PostData, PostStructure } from "./types.js";
 
-const recipe1: PostStructure = {
+export const recipe1: PostStructure = {
   _id: "68068eedaad91c08b13ed667",
   publishDate: new Date("2025-04-13T09:00:00.000Z"),
   title: "Instant Pot Mac and Cheese",
@@ -23,7 +23,7 @@ Instructions:
   author: "Negri de Cal Negri",
 };
 
-const recipe2: PostStructure = {
+export const recipe2: PostStructure = {
   _id: "68068eedaad91c08b13ed668",
   publishDate: new Date("2025-04-14T11:30:00.000Z"),
   title: "Slow Cooker BBQ Pulled Pork",
@@ -45,7 +45,7 @@ Instructions:
   author: "Negri de Cal Negri",
 };
 
-const recipe3: PostStructure = {
+export const recipe3: PostStructure = {
   _id: "68068eedaad91c08b13ed669",
   publishDate: new Date("2025-04-16T07:00:00.000Z"),
   title: "Overnight Oats with Berries",
@@ -66,7 +66,7 @@ Instructions:
   author: "Negri de Cal Negri",
 };
 
-const recipe4: PostStructure = {
+export const recipe4: PostStructure = {
   _id: "68068eedaad91c08b13ed670",
   publishDate: new Date("2025-04-17T09:00:00.000Z"),
   title: "Rice Cooker Vegetable Curry",
@@ -89,7 +89,7 @@ Instructions:
   author: "Negri de Cal Negri",
 };
 
-const recipe5: PostStructure = {
+export const recipe5: PostStructure = {
   _id: "68068eedaad91c08b13ed671",
   publishDate: new Date("2025-04-19T12:00:00.000Z"),
   title: "Pan-Fried Salmon with Dill Sauce",
@@ -112,7 +112,7 @@ Instructions:
   author: "Negri de Cal Negri",
 };
 
-const recipe6: PostStructure = {
+export const recipe6: PostStructure = {
   _id: "68068eedaad91c08b13ed672",
   publishDate: new Date("2025-04-20T08:00:00.000Z"),
   title: "No-Bake Chocolate Oat Bars",
@@ -134,7 +134,7 @@ Instructions:
   author: "Negri de Cal Negri",
 };
 
-const recipe7: PostStructure = {
+export const recipe7: PostStructure = {
   _id: "68068eedaad91c08b13ed673",
   publishDate: new Date("2025-04-21T10:30:00.000Z"),
   title: "Spaghetti Aglio e Olio",
@@ -157,7 +157,7 @@ Instructions:
   author: "Negri de Cal Negri",
 };
 
-const recipe8: PostStructure = {
+export const recipe8: PostStructure = {
   _id: "68068eedaad91c08b13ed674",
   publishDate: new Date("2025-04-22T09:15:00.000Z"),
   title: "Chickpea Salad Wraps",
@@ -180,7 +180,7 @@ Instructions:
   author: "Negri de Cal Negri",
 };
 
-const recipe9: PostStructure = {
+export const recipe9: PostStructure = {
   _id: "68068eedaad91c08b13ed675",
   publishDate: new Date("2025-04-23T08:45:00.000Z"),
   title: "Mason Jar Greek Salad",
@@ -202,7 +202,7 @@ Instructions:
   author: "Negri de Cal Negri",
 };
 
-const recipe10: PostStructure = {
+export const recipe10: PostStructure = {
   _id: "68068eedaad91c08b13ed676",
   publishDate: new Date("2025-04-24T07:00:00.000Z"),
   title: "Air Fryer Sweet Potato Fries",
@@ -220,19 +220,6 @@ Instructions:
 2. Air fry at 400°F for 15–20 minutes, shaking halfway.
 3. Serve with your favorite dip.`,
   author: "Negri de Cal Negri",
-};
-
-export {
-  recipe1,
-  recipe2,
-  recipe3,
-  recipe4,
-  recipe5,
-  recipe6,
-  recipe7,
-  recipe8,
-  recipe9,
-  recipe10,
 };
 
 export const callos: PostData = {

@@ -60,6 +60,40 @@ class PostController implements PostControllerStructure {
 
     res.status(statusCodes.CREATED).json({ post: newPost });
   };
+
+  public deletePost = async (
+    req: PostsRequest,
+    res: Response,
+    next: NextFunction,
+  ): Promise<void> => {
+    const { postId } = req.params;
+
+    const postIdRequiredLength = 24;
+
+    if (postId.length !== postIdRequiredLength) {
+      const error = new ServerError(
+        statusCodes.NOT_ACCEPTABLE,
+        "Post ID not correct",
+      );
+
+      next(error);
+      return;
+    }
+
+    const deletedPost = await this.postModel.findByIdAndDelete(postId).exec();
+
+    if (!deletedPost) {
+      const error = new ServerError(
+        statusCodes.NOT_FOUND,
+        "Post to delete can not be found",
+      );
+
+      next(error);
+      return;
+    }
+
+    res.status(200).json({ post: deletedPost });
+  };
 }
 
 export default PostController;
