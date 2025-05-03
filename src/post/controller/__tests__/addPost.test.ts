@@ -8,10 +8,10 @@ import statusCodes from "../../../globals/statusCodes.js";
 import ServerError from "../../../server/ServerError/ServerError.js";
 
 describe("Given the addPost method of PostController", () => {
-  const res = {
+  const res: Pick<Response, "status" | "json"> = {
     status: jest.fn().mockReturnThis(),
     json: jest.fn(),
-  } as Pick<Response, "status" | "json">;
+  };
   const next = jest.fn();
 
   afterEach(() => {
@@ -19,21 +19,21 @@ describe("Given the addPost method of PostController", () => {
   });
 
   describe("When it receives a request with a mac and cheese recipe, and a response", () => {
-    const postModel = {
+    const postModel: Pick<Model<PostStructure>, "findOne" | "create"> = {
       findOne: jest.fn().mockReturnValue(null),
       create: jest.fn().mockReturnValue({
         ...macAndCheeseDto,
         save: jest.fn(),
       }),
-    } as Pick<Model<PostStructure>, "findOne">;
+    };
 
     const postController = new PostController(
       postModel as Model<PostStructure>,
     );
 
-    const req = {
+    const req: Pick<PostsRequest, "body"> = {
       body: macAndCheeseDto,
-    } as Pick<PostsRequest, "body">;
+    };
 
     test("Then it should call the response's status method with status code 201", async () => {
       await postController.addPost(req as PostsRequest, res as Response, next);
@@ -55,21 +55,21 @@ describe("Given the addPost method of PostController", () => {
   });
 
   describe("When it receives a request with a pulled pork recipe that already exists, and a next function", () => {
-    const postModel = {
+    const postModel: Pick<Model<PostStructure>, "findOne" | "create"> = {
       findOne: jest.fn().mockReturnValue(pulledPorkDto),
       create: jest.fn().mockReturnValue({
         ...macAndCheeseDto,
         save: jest.fn(),
       }),
-    } as Pick<Model<PostStructure>, "findOne">;
+    };
 
     const postController = new PostController(
       postModel as Model<PostStructure>,
     );
 
-    const req = {
+    const req: Pick<PostsRequest, "body"> = {
       body: macAndCheeseDto,
-    } as Pick<PostsRequest, "body">;
+    };
 
     test("Then it should call the next function with error 409 'Post with this title already exists'", async () => {
       await postController.addPost(req as PostsRequest, res as Response, next);

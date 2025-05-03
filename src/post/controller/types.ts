@@ -8,6 +8,11 @@ export interface PostControllerStructure {
     res: Response,
     next: NextFunction,
   ) => Promise<void>;
+  getPost: (
+    req: PostsRequest,
+    res: Response,
+    next: NextFunction,
+  ) => Promise<void>;
 }
 
 export type PostParams = {
