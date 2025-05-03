@@ -1,7 +1,7 @@
 import request from "supertest";
 import mongoose from "mongoose";
 import { MongoMemoryServer } from "mongodb-memory-server";
-import { callos, conejo, crocretas, pajaritos } from "../../fixtures.js";
+import { callos, conejo, pajaritos } from "../../fixtures.js";
 import connectToDatabase from "../../../database/connectToDatabase.js";
 import Post from "../../model/Post.js";
 import app from "../../../server/app.js";
@@ -27,9 +27,9 @@ describe("Given the DELETE /posts/:postId endpoint", () => {
       const expectedStatusCode = 200;
       const expectedDeletedPost = conejo;
 
-      const response = await request(app)
-        .delete("/posts/cccccccccccccccccccccccc")
-        .send(conejo);
+      const response = await request(app).delete(
+        "/posts/cccccccccccccccccccccccc",
+      );
 
       expect(response.status).toBe(expectedStatusCode);
       expect(response.body.post).toEqual(
@@ -50,9 +50,9 @@ describe("Given the DELETE /posts/:postId endpoint", () => {
       const expectedStatusCode = 404;
       const expectedErrorMessage = { error: "Post to delete can not be found" };
 
-      const response = await request(app)
-        .delete("/posts/ffffffffffffffffffffffff")
-        .send(crocretas);
+      const response = await request(app).delete(
+        "/posts/ffffffffffffffffffffffff",
+      );
 
       expect(response.status).toBe(expectedStatusCode);
       expect(response.body).toStrictEqual(expectedErrorMessage);
@@ -64,9 +64,9 @@ describe("Given the DELETE /posts/:postId endpoint", () => {
       const expectedStatusCode = 406;
       const expectedErrorMessage = { error: "Post ID not correct" };
 
-      const response = await request(app)
-        .delete("/posts/aaaaaaaaaaaaaaaaaaaaaaa")
-        .send(callos);
+      const response = await request(app).delete(
+        "/posts/aaaaaaaaaaaaaaaaaaaaaaa",
+      );
 
       expect(response.status).toBe(expectedStatusCode);
       expect(response.body).toStrictEqual(expectedErrorMessage);

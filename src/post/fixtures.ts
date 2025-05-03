@@ -255,14 +255,3 @@ export const conejo: PostStructure = {
   tags: ["tapas"],
   _id: "cccccccccccccccccccccccc",
 };
-
-export const crocretas: PostStructure = {
-  publishDate: new Date(),
-  author: "Felipe",
-  title: "Crocretas de Bacalao del Bar Amadeo",
-  content: "Crujientes por fuera, cremosas por dentro",
-  imageUrl: "http://www.iglesuela.es/crocretas.webp",
-  imageAlt: "Crocretas de bacalao",
-  tags: ["tapas"],
-  _id: "ffffffffffffffffffffffff",
-};
