@@ -12,15 +12,15 @@ beforeEach(() => {
 });
 
 describe("Given the deletePost method from PostController class", () => {
-  const res = {
+  const res: Pick<Response, "status" | "json"> = {
     status: jest.fn().mockReturnThis(),
     json: jest.fn(),
-  } as Pick<Response, "status" | "json">;
+  };
 
   const next = jest.fn();
 
   describe("When it receives a request with the 'Slow Cooker BBQ Pulled Pork' postId", () => {
-    const req = { params: { postId: recipe2._id } } as Pick<Request, "params">;
+    const req: Pick<Request, "params"> = { params: { postId: recipe2._id } };
 
     const postModel: Pick<Model<PostStructure>, "findByIdAndDelete"> = {
       findByIdAndDelete: jest
@@ -60,10 +60,9 @@ describe("Given the deletePost method from PostController class", () => {
   });
 
   describe("When it receives a request with 'invalid-post-id' postId", () => {
-    const req = { params: { postId: "invalid-post-id" } } as Pick<
-      Request,
-      "params"
-    >;
+    const req: Pick<Request, "params"> = {
+      params: { postId: "invalid-post-id" },
+    };
 
     const postModel: Pick<Model<PostStructure>, "findByIdAndDelete"> = {
       findByIdAndDelete: jest
@@ -91,10 +90,9 @@ describe("Given the deletePost method from PostController class", () => {
   });
 
   describe("When it receives a request with 'not-found-id-but-has--24' postId", () => {
-    const req = { params: { postId: "not-found-id-but-has--24" } } as Pick<
-      Request,
-      "params"
-    >;
+    const req: Pick<Request, "params"> = {
+      params: { postId: "not-found-id-but-has--24" },
+    };
 
     const postModel: Pick<Model<PostStructure>, "findByIdAndDelete"> = {
       findByIdAndDelete: jest

@@ -7,10 +7,10 @@ import statusCodes from "../../../globals/statusCodes.js";
 import { PostsRequest } from "../types.js";
 
 describe("Given the getPosts method of PostController", () => {
-  const res = {
+  const res: Pick<Response, "status" | "json"> = {
     status: jest.fn().mockReturnThis(),
     json: jest.fn(),
-  } as Pick<Response, "status" | "json">;
+  };
 
   const postsTotal = 10;
 
@@ -27,15 +27,15 @@ describe("Given the getPosts method of PostController", () => {
       fixturePosts.recipe5,
     ];
 
-    const query = {
+    const query: Pick<
+      Query<PostStructure[], PostStructure>,
+      "sort" | "skip" | "limit" | "exec"
+    > = {
       sort: jest.fn().mockReturnThis(),
       skip: jest.fn().mockReturnThis(),
       limit: jest.fn().mockReturnThis(),
       exec: jest.fn().mockReturnValue(posts),
-    } as Pick<
-      Query<PostStructure[], PostStructure>,
-      "sort" | "skip" | "limit" | "exec"
-    >;
+    };
 
     const postsModel = {
       find: jest.fn().mockReturnValue(query),
@@ -46,9 +46,11 @@ describe("Given the getPosts method of PostController", () => {
       postsModel as Model<PostStructure>,
     );
 
-    const req = {
-      query: {},
-    } as Pick<PostsRequest, "query">;
+    const req: Pick<PostsRequest, "query"> = {
+      query: {
+        pageNumber: "",
+      },
+    };
 
     test("Then it should call the response's status method with status code 200", async () => {
       const expectedStatusCode = statusCodes.OK;
@@ -83,15 +85,15 @@ describe("Given the getPosts method of PostController", () => {
         fixturePosts.recipe10,
       ];
 
-      const query = {
+      const query: Pick<
+        Query<PostStructure[], PostStructure>,
+        "sort" | "skip" | "limit" | "exec"
+      > = {
         sort: jest.fn().mockReturnThis(),
         skip: jest.fn().mockReturnThis(),
         limit: jest.fn().mockReturnThis(),
         exec: jest.fn().mockReturnValue(posts),
-      } as Pick<
-        Query<PostStructure[], PostStructure>,
-        "sort" | "skip" | "limit" | "exec"
-      >;
+      };
 
       const postsModel = {
         find: jest.fn().mockReturnValue(query),
@@ -102,11 +104,11 @@ describe("Given the getPosts method of PostController", () => {
         postsModel as Model<PostStructure>,
       );
 
-      const req = {
+      const req: Pick<PostsRequest, "query"> = {
         query: {
           pageNumber: "2",
         },
-      } as Pick<PostsRequest, "query">;
+      };
 
       await postController.getPosts(req as PostsRequest, res as Response);
 
